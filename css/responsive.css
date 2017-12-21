@@ -1,0 +1,374 @@
+/* Normal desktop :992px. */
+@media (min-width: 992px) and (max-width: 1169px) {
+.menu-area ul li a {
+  font-size: 14px;
+  padding: 20px 3px;
+}
+.menu-area ul li .mega-menu {
+  width: 685px;
+}
+.menu-area ul li .mega-menu-2 {
+  width: 580px;
+}
+.categories-area .categories-sub-menu ul li .categories-mega-menu {
+  width: 800px;
+}
+.categories-area .categories-sub-menu ul li .categories-mega-menu-2 {
+  width: 500px !important;
+}
+.product-content h4 > a {
+  font-size: 15px;
+}
+.deal-content p {
+  display: none;
+}
+.saveing {
+  right: 18px;
+  width: 110px;
+}
+.shop .product-wrapper-2 .action-area .price-3 ul li.new-price {
+  font-size: 16px;
+}
+.shop .product-wrapper-2 .product-link ul li a {
+  font-size: 14px;
+}
+.cdown {
+  margin: 0 8px;
+}
+.cdown::before {
+  right: -12px;
+}
+.home-3 .product-wrapper-3 .product-content-2 .product-link ul li a {
+  font-size: 14px;
+}
+.home-3 .product-wrapper-3 .product-content-2 .product-link ul li {
+  margin: 0 2px;
+}
+.special-content .sold-option {
+  padding: 0 0 36px;
+}
+.deal-image {
+  padding: 20px;
+}
+.deal-img-2 {
+  padding: 16px;
+}
+
+
+
+}
+
+ 
+/* Tablet desktop :768px. */
+@media (min-width: 768px) and (max-width: 991px) {
+.tab-menu ul li {
+  margin-right: 30px;
+}
+.product-content .price ul li.new-price {
+  font-size: 14px;
+}
+.saveing {
+	display:none;
+}
+.cdown {
+  margin: 0 10px 10px;
+}
+.deal-content {
+  padding: 20px 30px;
+}
+.deal-content p {
+  display: none;
+}
+.deal-content h6 {
+  display: none;
+}
+.deal-content > span {
+  display: none;
+}
+.deal-content a {
+  margin: 23px 0;
+}
+.deal-img-2 {
+  padding: 23px;
+}
+.blog-content-2 h2 > a {
+  font-size: 19px;
+}
+.comment-author-content {
+  width: 90%;
+}
+.contact-info-area .single-info .media-body span {
+  font-size: 12px;
+}
+.product-details .arrivel-area.pb-50 {
+  margin-top: 30px;
+}
+.shop .product-wrapper-2 {
+  float: left;
+  width: 50%;
+}
+.shop .product-wrapper-2 .action-area .price-3 ul li.new-price {
+  font-size: 17px;
+}
+.shop .product-wrapper-2 .product-link ul li a {
+  font-size: 14px;
+}
+.home-2 .section-title-2 h2 {
+  font-size: 16px;
+}
+.home-2 .tab-menu-2 ul li {
+  margin-left: 6px;
+}
+.home-2 .tab-menu-2 ul li a {
+  font-size: 14px;
+}
+.home-2 .section-title-2 h2::before {
+  bottom: -17px;
+}
+.single-sale .sale-text h2 a {
+  font-size: 14px;
+}
+.single-sale .sale-text span {
+  font-size: 18px;
+}
+.single-sale .sale-text {
+  margin-top: 0;
+}
+.single-banner-2 .banner-text h2 {
+  font-size: 29px;
+  margin-bottom: 4px;
+}
+.single-banner-2 .banner-text span {
+  font-size: 14px;
+  margin-bottom: 5px;
+}
+.product-info-main {
+  margin-top: 28px;
+}
+.special-content .price-2 {
+  margin-bottom: 15px;
+}
+.special-content .sold-option {
+  padding: 0 0 45px;
+}
+.special-content > span {
+  margin-bottom: 16px;
+}
+
+
+}
+
+ 
+/* small mobile :320px. */
+@media (max-width: 767px) {
+.container {width:300px}
+.header-right-link {
+  float: none;
+  text-align: center;
+} 
+.logo-area {
+  margin-top: 0;
+  text-align: center;
+} 
+.slider-text h1 {
+  font-size: 13px;
+  margin-bottom: 10px;
+} 
+ .slider-text h2 {
+  font-size: 15px;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+ .slider-text a {
+  display: none!important;
+}
+ .ptb-80 {
+  padding: 40px 0;
+}
+ .br::before {
+  display: none;
+}
+.saveing {
+  display: none;
+} 
+ .tab-menu ul li a {
+  font-size: 18px;
+}
+ .tab-menu ul li {
+  margin-right: 10px;
+}
+ .product-wrapper {
+  margin-bottom: 30px;
+}
+ .cdown {
+  margin: 0 10px 10px;
+}
+ .section-title-2 {
+  float: none;
+  width: 100%;
+}
+ .tab-menu-2 {
+  float: none;
+  text-align: left;
+  margin-top: 20px;
+}
+ .tab-menu-2 ul li {
+  display: inline-block;
+  margin-left: 8px;
+}
+ .deal-area {
+  display: none;
+}
+ .single-banner-2 {
+  float: left;
+  position: relative;
+  width: 50%;
+}
+ .single-banner-2 .banner-text {
+  display: none;
+}
+ .news-active.owl-carousel.owl-theme .owl-controls .owl-nav div, .feature-product-active.owl-carousel.owl-theme .owl-controls .owl-nav div {
+  display: none!important;
+}
+.newslatter-area {
+  margin-top: 40px;
+} 
+ .single-footer {
+  margin-bottom: 30px;
+}
+ .copy-right-area {
+  margin-bottom: 15px;
+  text-align: center;
+}
+ .payment-area.text-right {
+  text-align: center;
+}
+ .about-img {
+  margin-bottom: 40px;
+}
+ .single-coloum {
+  margin-bottom: 40px;
+}
+ .single-team {
+  margin-bottom: 30px;
+}
+ .blog-content-2 h2 > a {
+  font-size: 20px;
+}
+ .single-left-shop-2 {
+  margin-top: 40px;
+}
+ .comment-author-content {
+  width: 88%;
+}
+ .blog-content-2 .share-post a {
+  font-size: 14px;
+  margin: 0 6px;
+}
+ .cart-btn {
+  display: none;
+}
+ .ptb-70 {
+  padding: 45px 0;
+}
+ .login-title p {
+  font-size: 13px;
+  line-height:20px;
+}
+ .single-register form label, .single-register label {
+  font-size: 15px;
+}
+ .flexslider {
+  margin: 0 0 40px;
+}
+ .product-info-main {
+  margin-top: 0;
+  margin-bottom:40px;
+}
+.shop .product-wrapper-2 {
+  float: none;
+  width: 100%;
+} 
+ .shop-right-area {
+  margin-top: 30px;
+}
+ .single-banner-3 {
+  margin-bottom: 30px;
+}
+.home-2 .special-product {
+  margin-bottom: 40px;
+}
+.home-3 .product-wrapper-3 .product-content-2 .product-link ul li a {
+  font-size: 12px;
+} 
+.home-3 .product-wrapper-3 .product-content-2 .product-link ul li {
+  margin: 0 1px;
+} 
+ .single-sale .sale-text h2 a {
+  font-size: 14px;
+}
+.single-sale .sale-text span {
+  font-size: 16px;
+} 
+ .single-sale .sale-text {
+  margin-top: 0;
+}
+ .mb-xs{
+	 margin-bottom:40px;
+ }
+ .home-3 .slider-text h1 {
+  font-size: 14px;
+  margin-bottom: 6px;
+}
+ .home-3 .slider-text h2 {
+  font-size: 20px;
+  margin-bottom: 0;
+}
+ .home-3 .slider-text p {
+  display: none;
+}
+.shop .product-wrapper-3 .product-content-2 {
+  margin-top: 0;
+}
+ .product-wrapper-3 .product-content-2 .action-area .action-link a {
+  display: none;
+}
+.product-wrapper-3 .product-content-2 .product-link ul li a {
+  font-size: 13px;
+}
+.product-wrapper-3 .product-content-2 .product-link ul li {
+  margin: 0 2px;
+}
+.blog-details .single-left-shop-2 {
+  margin-top: 0;
+}
+ .coupon-area .coupon-accordion span {
+  font-size: 12px;
+}
+.coupon-area .coupon-accordion h4 {
+  font-size: 13px;
+}
+#scrollUp{
+	display:none;
+}
+ .ptb-100 {
+  padding: 70px 0;
+}
+ #scrollUp {
+  display: none !important;
+}
+ 
+ 
+ 
+ 
+}
+ 
+/* Large Mobile :480px. */
+@media only screen and (min-width: 480px) and (max-width: 767px) {
+.container {width:450px}
+ .login-title p {
+  font-size: 12px;
+}
+
+}
+ 
