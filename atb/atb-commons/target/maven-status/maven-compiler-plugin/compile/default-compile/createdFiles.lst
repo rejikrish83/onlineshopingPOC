@@ -1,0 +1,15 @@
+com\atb\model\UserProfile.class
+com\atb\dto\SessionConfigurationDetails.class
+com\atb\common\SequenceConstants.class
+com\atb\model\UserRole.class
+com\atb\common\GenericSearchCriteria.class
+com\atb\common\Util.class
+com\atb\common\SessionUtils.class
+com\atb\web\service\PropertyService.class
+com\atb\common\MessageConstants.class
+com\atb\model\HibernateMappedEntity.class
+com\atb\model\User.class
+com\atb\common\DomainConstants.class
+com\atb\model\Menu.class
+com\atb\common\SessionData.class
+com\atb\web\service\UserManagementService.class

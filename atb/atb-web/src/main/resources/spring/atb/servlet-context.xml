@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans:beans xmlns="http://www.springframework.org/schema/mvc"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:beans="http://www.springframework.org/schema/beans"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="
+		http://www.springframework.org/schema/mvc http://www.springframework.org/schema/mvc/spring-mvc-4.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.2.xsd">
+		
+	<!-- DispatcherServlet Context: defines this servlet's request-processing infrastructure -->
+
+	<!-- Configures the Spring MVC @Controller programming model -->
+	<annotation-driven />
+
+	<!-- Configures transaction management around @Transactional components -->
+	<!-- <tx:annotation-driven /> -->
+
+	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<resources mapping="/resources/**" location="/resources/" />
+	<resources mapping="/resources/**" location="/atb/" />
+	
+	<!-- Configures a handler for serving static resources by forwarding to the Servlet container's default Servlet. -->
+	<default-servlet-handler />
+	
+	<!-- Maps view names to Tiles Definitions with support for partial re-rendering -->
+	<beans:bean id="viewResolver" class="org.springframework.web.servlet.view.UrlBasedViewResolver">
+	  <beans:property name="viewClass" value="org.springframework.web.servlet.view.tiles3.TilesView"/>
+	  <beans:property name="order" value="0"/>
+	</beans:bean>
+	
+	<beans:bean id="multipartResolver"
+		class="org.springframework.web.multipart.commons.CommonsMultipartResolver">
+		 <!-- setting maximum upload size 50 MB (if 100 MB value need to changed as 100000000)-->
+		<beans:property name="maxUploadSize" value="50000000" />
+	</beans:bean>
+	
+	<!-- Initializes the Apache Tiles CompositeView system -->
+	<!-- <beans:bean id="tilesConfigurer" class="org.springframework.web.servlet.view.tiles3.TilesConfigurer">
+		<beans:property name="definitions">
+			<beans:value>
+				/WEB-INF/tiles-atb-defs.xml
+			</beans:value>
+		</beans:property>
+	</beans:bean> -->
+	
+	<!-- Imports the application controllers that process client requests -->
+	<beans:import resource="controllers.xml" />
+</beans:beans>

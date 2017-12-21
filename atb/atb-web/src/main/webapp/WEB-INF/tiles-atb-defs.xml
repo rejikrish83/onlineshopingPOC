@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE tiles-definitions PUBLIC 
+	"-//Apache Software Foundation//DTD Tiles Configuration 3.0//EN" 
+      "http://tiles.apache.org/dtds/tiles-config_3_0.dtd">
+	
+<tiles-definitions>
+	
+	<definition name="standardLayout" template="/WEB-INF/layouts/standard.jsp"/>
+	
+	<definition name="home" extends="standardLayout">
+		<put-attribute name="body" value="/WEB-INF/views/home.jsp" />
+	</definition>
+	
+	<definition name="user" extends="standardLayout">
+		<put-attribute name="body" value="/WEB-INF/views/user.jsp" />
+	</definition>
+	
+	<!-- <definition name="landingHomePage" template="/atb/layouts/views/landingPage.jsp"/> -->
+	
+	<definition name="login" template="/WEB-INF/views/loginPage.jsp"/>
+	
+	<definition name="passwordChange" template="/WEB-INF/views/changePassword.jsp"/>
+	
+	<definition name="passwordForgot" template="/WEB-INF/views/forgotPassword.jsp"/>
+	
+	<definition name="fssApprovePage" template="/atb/asset_management/views/fssApprovePage.html"/>
+	
+</tiles-definitions>

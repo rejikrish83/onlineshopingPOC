@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+		xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
+		xmlns:batch="http://www.springframework.org/schema/batch"
+		xmlns:util="http://www.springframework.org/schema/util" 
+		xmlns:context="http://www.springframework.org/schema/context"
+		xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.2.xsd
+			http://www.springframework.org/schema/batch http://www.springframework.org/schema/batch/spring-batch-3.0.xsd
+			http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.2.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.2.xsd">			
+			
+	<!-- Spring Batch Job Configurations -->
+	
+	<!-- <bean id="apiListUploadedFileProcessingJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="name" value="apiListUploadedFileProcessor" />
+		<property name="group" value="quartz-batch" />
+		<property name="jobClass" value="com.atb.application.scheduling.APIListUploadProcessorJob" />
+	</bean>
+	
+	runs every 1 Minute
+	<bean id="apiListUploadedFileProcessingTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="apiListUploadedFileProcessingJobDetail" />
+		<property name="cronExpression" value="0 0/1 * * * ?" />
+	</bean>
+	
+	SyncAssetValueAndCostCenterJob
+	<bean id="syncAssetValueAndCostCenterJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="name" value="syncAssetValueAndCostCenter" />
+		<property name="group" value="quartz-batch" />
+		<property name="jobClass" value="com.atb.application.scheduling.SyncAssetValueAndCostCenterJob" />
+	</bean>
+	
+	runs every 1 Minute
+	<bean id="syncAssetValueAndCostCenterJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="syncAssetValueAndCostCenterJobDetail" />
+		<property name="cronExpression" value="0 0/5 * * * ?" />
+	</bean>
+	MaintenancePlanNotificationJob
+	<bean id="maintenancePlanNotificationJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="name" value="maintenancePlanNotification" />
+		<property name="group" value="quartz-batch" />
+		<property name="jobClass" value="com.atb.application.scheduling.MaintenancePlanNotificationJob" />
+	</bean>
+	
+	runs every 2 Minute
+	<bean id="maintenancePlanNotificationJobTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="maintenancePlanNotificationJobDetail" />
+		<property name="cronExpression" value="0 0/2 * * * ?" />
+	</bean>
+	
+	ApiEmailReceiveFromCCOwner Job
+	<bean id="apiEmailReceiveFromCCOwnerJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="name" value="ApiEmailReceiveFromCCOwnerProcessor" />
+		<property name="group" value="quartz-batch" />
+		<property name="jobClass" value="com.atb.application.scheduling.ApiEmailReceiveFromCCOwnerJob" />
+	</bean>
+	
+	runs every 1 Minute
+	<bean id="apiEmailReceiveFromCCOwnerTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="apiEmailReceiveFromCCOwnerJobDetail" />
+		<property name="cronExpression" value="0 0/1 * * * ?" />
+	</bean>
+	
+	CreateWorkOrderViaMaintenancePlan Job
+	<bean id="createWorkOrderViaMaintenancePlanJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="name" value="CreateWorkOrderViaMaintenancePlanProcessor" />
+		<property name="group" value="quartz-batch" />
+		<property name="jobClass" value="com.atb.application.scheduling.CreateWorkOrderViaMaintenancePlanJob" />
+	</bean>
+	
+	runs every 5 Minute
+	<bean id="createWorkOrderViaMaintenancePlanTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="createWorkOrderViaMaintenancePlanJobDetail" />
+		<property name="cronExpression" value="0 0/5 * * * ?" />
+	</bean>
+	
+	Spare Part event Job
+	<bean id="sparePartEventJobDetail" class="org.springframework.scheduling.quartz.JobDetailFactoryBean">
+		<property name="name" value="SparePartEventProcessor" />
+		<property name="group" value="quartz-batch" />
+		<property name="jobClass" value="com.atb.application.scheduling.SparePartEventJob" />
+	</bean>
+	
+	Every Monday @8:15 A.M
+	<bean id="sparePartEventTrigger" class="org.springframework.scheduling.quartz.CronTriggerFactoryBean">
+		<property name="jobDetail" ref="sparePartEventJobDetail" />
+		<property name="cronExpression" value="0 15 8 ? * MON-FRI" />
+	</bean>
+	
+	<bean id="quartzScheduler"
+		class="org.springframework.scheduling.quartz.SchedulerFactoryBean" scope="singleton" primary="true">
+		<property name="waitForJobsToCompleteOnShutdown" value="false" />
+		<property name="triggers">
+			<list>
+				 <ref bean="apiEmailReceiveFromCCOwnerTrigger" /> 
+				 <ref bean="apiListUploadedFileProcessingTrigger" />
+				 <ref bean="syncAssetValueAndCostCenterJobTrigger" />
+				 <ref bean="createWorkOrderViaMaintenancePlanTrigger" /> 
+				 <ref bean="maintenancePlanNotificationJobTrigger" />                               
+                 <ref bean="sparePartEventTrigger" />
+            </list>
+		</property>
+		<property name="quartzProperties">
+		    <props>
+		        org.quartz.simpl.SimpleThreadPool Class Thread Count, Default is 10.
+		        <prop key="org.quartz.threadPool.threadCount">10</prop>
+			</props>
+		</property>
+		<property name="schedulerContextAsMap">
+			<map>
+				<entry key="propertyService">
+					<ref bean="propertyService" />
+				</entry>
+				<entry key="apiListFileProcessorService">
+					<ref bean="apiListFileProcessorService" />
+				</entry>
+				<entry key="apiEmailReceiveService">
+					<ref bean="apiEmailReceiveService" />
+				</entry>
+				<entry key="workOrderService">
+					<ref bean="workOrderService" />
+				</entry>
+				<entry key="assetService">
+					<ref bean="assetService" />
+				</entry>
+				<entry key="reserveConsumeSpareService">
+					<ref bean="reserveConsumeSpareService" />
+				</entry>
+				<entry key="maintenancePlanService">
+					<ref bean="maintenancePlanService" />
+				</entry>
+				<entry key="emailManagementService">
+					<ref bean="emailManagementService" />
+				</entry>		
+				<entry key="userManagementService">
+					<ref bean="userManagementService" />
+				</entry>
+			</map>
+		</property>
+	</bean>	 -->
+</beans>
